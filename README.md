@@ -1,5 +1,5 @@
 # File-Header-Forger
-绕过aliyundrive(阿里云盘)的文件分享限制
+绕过aliyundrive的文件分享限制
 ## 用途
 此工具针对使用aliyundrive时,受到文件分享类型限制进行伪造
 ## 原理
