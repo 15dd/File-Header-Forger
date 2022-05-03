@@ -14,7 +14,7 @@
 
 - 目前(2022/5/2)经过多次测试,aliyundrive只对文件头进行了限制,没对扩展名做限制
 ## 缺点
-使用麻烦,配置麻烦
+使用麻烦,配置麻烦,会随这之后的更新逐步完善操作体验
 ## 参考内容:
 - https://blog.csdn.net/qq_40657585/article/details/83097386
 - https://blog.csdn.net/qq_36171645/article/details/88966127
