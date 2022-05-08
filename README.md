@@ -40,6 +40,11 @@
 - https://blog.csdn.net/weixin_46348230/article/details/120684653
 - https://blog.csdn.net/qq_25921925/article/details/103987572
 - https://www.pythonheidong.com/blog/article/441185/3494dd82eeff9f34d613/
+- https://www.jianshu.com/p/2a931ce70b4b
+- https://www.cnpython.com/qa/412691
+- https://www.jianshu.com/p/d55e43c694db
+- https://blog.csdn.net/fan0829/article/details/119984383
+- https://www.pythonheidong.com/blog/article/190465/0049cea7f264404867fb/
 ---
 ##### 2022/5/2 21:10 Created by cyh128
 
