@@ -3,7 +3,7 @@
  <class>about</class>
  <widget class="QWidget" name="about">
   <property name="geometry">
-   <rect>
+   <rect> 
     <x>0</x>
     <y>0</y>
     <width>536</width>
