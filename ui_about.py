@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+ 
 class Ui_about(object):
     def setupUi(self, about):
         about.setObjectName("about")

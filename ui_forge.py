@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+ 
 class Ui_forge(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
