@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="ico">
+    <file>img/restore.png</file>
+    <file>img/forge.png</file>
+    <file>img/github Logo.png</file>
+    <file>img/Logo.png</file>
+    <file>img/aboutFHF.ico</file>
+    <file>img/autoAdd.ico</file>
+    <file>img/execute.ico</file>
+    <file>img/Logo.ico</file>
+    <file>img/qt-logo.png</file>
+  </qresource>
+</RCC>
