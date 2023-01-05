@@ -11,7 +11,7 @@ with open(filePath,"rb+") as rawFile:
     rawFile.seek(0,0)   #移动到文件的0(头)处偏移为0的位置
     BOC = rawFile.read(4) #读取节                
     rawFile.seek(-4,2) #移动到文件的2(尾)处偏移为-4(向前4个字节)的位置
-    EOC = rawFile.read(4
+    EOC = rawFile.read(4)
     rawFile.seek(-4,2) 
     rawFile.write(BOC) #向文件末尾的4个写成文件开头的4个字节
     rawFile.seek(0,0)
