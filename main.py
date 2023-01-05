@@ -10,7 +10,7 @@ from ui_forge import *
 from ui_restore import *
 from PyQt5.QtCore import *
 
-
+ 
 
 #还原成功窗口===================================================================
 class restoreWindow(QWidget, Ui_restore):
