@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>about</class>
- <widget class="QWidget" name="about">
+ <widget class="QDialog" name="about">
   <property name="geometry">
-   <rect> 
+   <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>300</height>
+    <width>553</width>
+    <height>321</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>关于</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="res.qrc">
-    <normaloff>:/ico/img/Logo.ico</normaloff>:/ico/img/Logo.ico</iconset>
+   <string>关于文件伪造器</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>20</y>
+     <x>10</x>
+     <y>30</y>
      <width>251</width>
      <height>261</height>
     </rect>
@@ -36,113 +32,132 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>30</y>
-     <width>246</width>
-     <height>242</height>
+     <x>273</x>
+     <y>35</y>
+     <width>244</width>
+     <height>251</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="font">
-           <font>
-            <family>Microsoft YaHei</family>
-            <pointsize>16</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>文件伪造器</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="font">
-           <font>
-            <family>Microsoft YaHei</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>本软件使用python和pyqt5编写</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <family>Microsoft YaHei</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>MIT License</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="font">
-           <font>
-            <family>Microsoft YaHei</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Version 1.4</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>16</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>文件伪造器</string>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>本软件使用python和pyqt5编写</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>MIT License</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Version 1.5</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
-    <item>
+    <item row="1" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
       <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
+       <enum>QSizePolicy::Preferred</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>20</width>
-        <height>60</height>
+        <width>239</width>
+        <height>23</height>
        </size>
       </property>
      </spacer>
     </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Github项目</string>
-      </property>
-      <property name="icon">
-       <iconset resource="res.qrc">
-        <normaloff>:/ico/img/github Logo.png</normaloff>:/ico/img/github Logo.png</iconset>
-      </property>
-     </widget>
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Github项目</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/ico/img/github Logo.png</normaloff>:/ico/img/github Logo.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>关闭</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -150,5 +165,22 @@
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>about</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>394</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>276</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

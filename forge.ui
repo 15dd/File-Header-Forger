@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>forge</class>
+ <widget class="QDialog" name="forge">
   <property name="geometry">
    <rect>
     <x>0</x>
-    <y>0</y> 
-    <width>445</width>
+    <y>0</y>
+    <width>442</width>
     <height>261</height>
    </rect>
   </property>
@@ -17,6 +17,26 @@
    <iconset resource="res.qrc">
     <normaloff>:/ico/img/Logo.ico</normaloff>:/ico/img/Logo.ico</iconset>
   </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>190</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -57,26 +77,6 @@
     <string>伪造成功</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>190</y>
-     <width>381</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>关闭</string>
-   </property>
-  </widget>
  </widget>
  <resources>
   <include location="res.qrc"/>
@@ -85,15 +85,15 @@
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>Form</receiver>
+   <receiver>forge</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>59</x>
-     <y>24</y>
+     <x>220</x>
+     <y>210</y>
     </hint>
     <hint type="destinationlabel">
-     <x>222</x>
+     <x>220</x>
      <y>130</y>
     </hint>
    </hints>

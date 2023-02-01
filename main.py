@@ -3,49 +3,46 @@ import re
 import os
 import webbrowser
 import binascii
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QDialog
 from ui_main import *
 from ui_about import *
 from ui_forge import *
 from ui_restore import *
 from PyQt5.QtCore import *
 
- 
+
 
 #还原成功窗口===================================================================
-class restoreWindow(QWidget, Ui_restore):
-    def __init__(self):
-        super(restoreWindow, self).__init__()
+class restoreWindow(QDialog, Ui_restore):
+    def __init__(self,parent=None):
+        super(restoreWindow,self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowModality(Qt.ApplicationModal)
-        self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint)
+        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowCloseButtonHint)
         self.setFixedSize(self.width(), self.height())
 #伪造成功窗口===================================================================
-class forgeWindow(QWidget, Ui_forge):
-    def __init__(self):
-        super(forgeWindow, self).__init__()
+class forgeWindow(QDialog, Ui_forge):
+    def __init__(self,parent=None):
+        super(forgeWindow,self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowModality(Qt.ApplicationModal)
-        self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint)
+        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowCloseButtonHint)
         self.setFixedSize(self.width(), self.height())
 #关于本程序的窗口===============================================================
-class aboutWindow(QWidget, Ui_about):
-    def __init__(self):
-        super(aboutWindow, self).__init__()
+class aboutWindow(QDialog, Ui_about):
+    def __init__(self,parent=None):
+        super(aboutWindow,self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowModality(Qt.ApplicationModal)
-        self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint)
+        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowCloseButtonHint)
         self.setFixedSize(self.width(), self.height())
 #调出网页----------------------------------------------------------------------    
     def openUrl(self):
         webbrowser.open("https://github.com/15dd/File-Header-Forger", new=0, autoraise=True) 
 #主窗口========================================================================
 class MyWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self):
-        super(MyWindow, self).__init__()
+    def __init__(self,parent=None):
+        super().__init__(parent)
         self.setupUi(self)
 
         self.setAcceptDrops(True)
@@ -68,10 +65,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 #主程序入口--------------------------------------------------------------------
     def Main(self):
         filePath=self.getFilePath() #获取文件地址
-        if filePath == -1: #如果获取失败,结束程序
-            return
-        if str(os.path.splitext(filePath)[-1]) not in ['.zip','.pdf']: #判断文件后缀,如果不是支持的格式,结束程序
-            QMessageBox.warning(self,"警告","仅支持文件后缀为.zip或.pdf的文件")
+        if filePath == -1: #如果获取失败,结束程序 
             return
         self.core(filePath) #执行文件修改
 
@@ -93,9 +87,14 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         try:
             with open(filePath,"rb+") as rawFile:
                 rawFile.seek(0,0)   #移动到文件的0(文件开头)处偏移为0的位置
-                BOC = rawFile.read(4) #读取4个字节                
+                BOC = rawFile.read(4) #读取4个字节 
                 rawFile.seek(-4,2) #移动到文件的2(文件末尾)处偏移为-4(向前4个字节)的位置
                 EOC = rawFile.read(4) 
+
+                if str(BOC) != str(self.HexToAscii(0x504B0304)) and str(EOC) != str(self.HexToAscii(0x504B0304)):
+                    QMessageBox.warning(self,"不支持的文件类型","该文件类型不受支持\n仅支持文件格式为.zip(要伪造的文件)或.pdf(要还原的文件)的文件\n注意:改扩展名无效")
+                    rawFile.close()
+                    return
 
                 rawFile.seek(-4,2) 
                 rawFile.write(BOC) #向文件末尾的4个字节改写成文件开头的4个字节
@@ -112,7 +111,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     self.lineEdit.setText(newname)
 
                     QApplication.beep()
-                    forgeWin.show()
+                    forgeWin.exec()
                 else: #如果不是zip文件,则还原
                     oldname = os.path.splitext(filePath)
                     newname = oldname[0] + '.zip'
@@ -121,7 +120,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     self.lineEdit.setText(newname)
 
                     QApplication.beep()
-                    restoreWin.show()
+                    restoreWin.exec()
 
         except:
             QMessageBox.critical(self,"错误","文件读写异常,请检查该文件\n可能的原因:\n1-文件不存在\n2-文件路径输错\n3-选择的不是文件,比如文件夹")
@@ -140,12 +139,12 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = MyWindow()
     myWin.show()
-    aboutWin = aboutWindow()
-    forgeWin = forgeWindow()
-    restoreWin = restoreWindow()
+    aboutWin = aboutWindow(myWin)
+    forgeWin = forgeWindow(myWin)
+    restoreWin = restoreWindow(myWin)
 
     myWin.actionb.triggered.connect(myWin.aboutQt)
-    myWin.actionabout.triggered.connect(aboutWin.show)
+    myWin.actionabout.triggered.connect(aboutWin.exec)
     myWin.pushButton_2.clicked.connect(myWin.Main)
     myWin.pushButton.clicked.connect(myWin.selectFile)
     myWin.pushButton_3.clicked.connect(lambda:os.startfile("使用教程.pdf"))

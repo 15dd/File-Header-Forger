@@ -10,20 +10,22 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
- 
+
 class Ui_restore(object):
     def setupUi(self, restore):
         restore.setObjectName("restore")
-        restore.resize(445, 261)
+        restore.resize(442, 261)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/ico/img/Logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         restore.setWindowIcon(icon)
-        self.label = QtWidgets.QLabel(restore)
-        self.label.setGeometry(QtCore.QRect(20, 20, 150, 150))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/ico/img/restore.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
+        self.pushButton = QtWidgets.QPushButton(restore)
+        self.pushButton.setGeometry(QtCore.QRect(30, 190, 381, 41))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
         self.label_2 = QtWidgets.QLabel(restore)
         self.label_2.setGeometry(QtCore.QRect(210, 60, 201, 61))
         font = QtGui.QFont()
@@ -33,14 +35,12 @@ class Ui_restore(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
-        self.pushButton = QtWidgets.QPushButton(restore)
-        self.pushButton.setGeometry(QtCore.QRect(30, 190, 381, 41))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
+        self.label = QtWidgets.QLabel(restore)
+        self.label.setGeometry(QtCore.QRect(20, 20, 150, 150))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap(":/ico/img/restore.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
 
         self.retranslateUi(restore)
         self.pushButton.clicked.connect(restore.close) # type: ignore
@@ -49,6 +49,6 @@ class Ui_restore(object):
     def retranslateUi(self, restore):
         _translate = QtCore.QCoreApplication.translate
         restore.setWindowTitle(_translate("restore", "还原成功"))
-        self.label_2.setText(_translate("restore", "还原成功"))
         self.pushButton.setText(_translate("restore", "关闭"))
+        self.label_2.setText(_translate("restore", "还原成功"))
 import rc_res

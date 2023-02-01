@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>restore</class>
- <widget class="QWidget" name="restore">
+ <widget class="QDialog" name="restore">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>445</width>
-    <height>261</height> 
+    <width>442</width>
+    <height>261</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,23 +17,24 @@
    <iconset resource="res.qrc">
     <normaloff>:/ico/img/Logo.ico</normaloff>:/ico/img/Logo.ico</iconset>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>150</width>
-     <height>150</height>
+     <x>30</x>
+     <y>190</y>
+     <width>381</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="res.qrc">:/ico/img/restore.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+    <string>关闭</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -57,24 +58,23 @@
     <string>还原成功</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>190</y>
-     <width>381</width>
-     <height>41</height>
+     <x>20</x>
+     <y>20</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
    <property name="text">
-    <string>关闭</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="res.qrc">:/ico/img/restore.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
@@ -89,11 +89,11 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>59</x>
-     <y>24</y>
+     <x>220</x>
+     <y>210</y>
     </hint>
     <hint type="destinationlabel">
-     <x>222</x>
+     <x>220</x>
      <y>130</y>
     </hint>
    </hints>

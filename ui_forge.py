@@ -10,21 +10,29 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
- 
+
 class Ui_forge(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(445, 261)
+    def setupUi(self, forge):
+        forge.setObjectName("forge")
+        forge.resize(442, 261)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/ico/img/Logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        Form.setWindowIcon(icon)
-        self.label = QtWidgets.QLabel(Form)
+        forge.setWindowIcon(icon)
+        self.pushButton = QtWidgets.QPushButton(forge)
+        self.pushButton.setGeometry(QtCore.QRect(30, 190, 381, 41))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        self.label = QtWidgets.QLabel(forge)
         self.label.setGeometry(QtCore.QRect(20, 20, 150, 150))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(":/ico/img/forge.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2 = QtWidgets.QLabel(forge)
         self.label_2.setGeometry(QtCore.QRect(210, 60, 201, 61))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
@@ -33,22 +41,14 @@ class Ui_forge(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(30, 190, 381, 41))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
 
-        self.retranslateUi(Form)
-        self.pushButton.clicked.connect(Form.close) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(forge)
+        self.pushButton.clicked.connect(forge.close) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(forge)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, forge):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "伪造成功"))
-        self.label_2.setText(_translate("Form", "伪造成功"))
-        self.pushButton.setText(_translate("Form", "关闭"))
+        forge.setWindowTitle(_translate("forge", "伪造成功"))
+        self.pushButton.setText(_translate("forge", "关闭"))
+        self.label_2.setText(_translate("forge", "伪造成功"))
 import rc_res
