@@ -4,7 +4,7 @@
 
 ## 需求
 - windows用户可以直接使用`releases`内已打包好的文件
-- macos和linux用户需自行安装环境`Python3`和`PyQt5`
+- macos和linux用户需自行安装环境`Python3`和`PyQt5`或根据`V1.0`版本(无GUI)的文件自行修改
   - `git clone https://github.com/15dd/File-Header-Forger.git`或`直接网页内下载源代码`
   - 运行`main.py`
 
