@@ -9,7 +9,6 @@
     <br />
     <a href="https://github.com/15dd/File-Header-Forger/releases"><b>Github下载</b></a>
     <a href="https://wwow.lanzoum.com/i9YpS0mesfch"><b>蓝奏云下载</b></a>
-    <a href="https://www.bilibili.com/video/BV1A24y1B7Xu/"><b>视频教程</b></a>
     <br />
   </p>
 
@@ -41,6 +40,8 @@ with open(filePath,"rb+") as rawFile:
     rawFile.close() #关闭文件
 ```
 ## 使用教程
+视频教程：bilibili.com/video/BV1A24y1B7Xu
+
 1. 将需要伪造的文件的路径填入框内（不要加双引号），支持选择文件或拖入文件 <br>
 仅支持伪造zip文件，如果你想伪造的文件不是zip格式，用压缩软件（如winrar）压缩成zip格式即可 
 ![2](img/2.png)
