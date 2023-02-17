@@ -1,8 +1,24 @@
-# File Header Forger/文件伪造器
+<p align="center">
+  <a>
+    <img src="/img/Logo.png" alt="Logo" width="100" height="100">
+  </a>
+
+  <h2 align="center">File Header Forger</h2>
+  <p align="center">
+    一个 <b>伪造文件文件头</b> 的软件
+    <br />
+    <a href="https://github.com/15dd/File-Header-Forger/releases"><b>Github下载</b></a>
+    <a href="https://wwow.lanzoum.com/i9YpS0mesfch"><b>蓝奏云下载</b></a>
+    <a href="https://www.bilibili.com/video/BV1A24y1B7Xu/"><b>视频教程</b></a>
+    <br />
+  </p>
+
+</p>
+
 - 使用Python编写的程序,GUI使用PyQt5
 - 该程序可用于绕过部分网盘的分享限制（如阿里云盘）
 
-## 需求
+## 环境要求
 - windows用户可以直接使用`releases`内已打包好的文件
 - macos和linux用户需自行安装环境`Python3`和`PyQt5`或根据`V1.0`版本(无GUI)的文件自行修改
   - `git clone https://github.com/15dd/File-Header-Forger.git`或`直接网页内下载源代码`
