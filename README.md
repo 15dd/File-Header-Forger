@@ -1,3 +1,4 @@
+# 已停止更新
 <p align="center">
   <a>
     <img src="/img/Logo.png" alt="Logo" width="100" height="100">
@@ -6,10 +7,6 @@
   <h2 align="center">File Header Forger</h2>
   <p align="center">
     一个 <b>伪造文件文件头</b> 的软件
-    <br />
-    <a href="https://github.com/15dd/File-Header-Forger/releases"><b>Github下载</b></a>
-    <a href="https://wwow.lanzoum.com/i9YpS0mesfch"><b>蓝奏云下载</b></a>
-    <br />
   </p>
 
 </p>
